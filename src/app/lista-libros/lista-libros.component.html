@@ -1,0 +1,28 @@
+<table class="table text-center">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Titulo</th>
+            <th>Genero</th>
+            <th>Paginas</th>
+            <th>Autor</th>
+            <th></th>
+            <th>Compra</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let libro of libros" [ngClass]="{'oferta': libro.oferta}">
+            <td><img [src]="libro.imagen" [alt]="libro.titulo"></td>
+            <td>{{libro.titulo}}</td>
+            <td>{{libro.genero}}</td>
+            <td>{{libro.cantidad_pag}}</td>
+            <td>{{libro.autor}}</td>
+            <td><span *ngIf="libro.stock == 0" class="badge text-bg-danger">SIN STOCK</span></td>
+            <td>
+                <app-input-numero [(cantidad)]="libro.cantidad" [max]="libro.stock" (maxAlcanzado)="maxAlcanzado($event)"></app-input-numero>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
