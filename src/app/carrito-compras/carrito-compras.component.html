@@ -1,1 +1,12 @@
-<p>Carrito de compras</p>
+<h3>Carrito de compras</h3>
+<ul >
+    <span *ngFor="let libro of listaCarrito$ | async">
+        <li *ngIf="libro.cantidad > 0">
+            {{libro.titulo}}: {{libro.cantidad}}
+        </li>
+    </span>
+</ul>
+
+<app-formulario-carrito></app-formulario-carrito>
+
+

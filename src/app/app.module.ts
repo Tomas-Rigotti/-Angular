@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListaLibrosComponent } from './lista-libros/lista-libros.component';
 import { CarritoComprasComponent } from './carrito-compras/carrito-compras.component';
+import { HttpClientModule } from '@angular/common/http';
 
 import { FormsModule } from '@angular/forms';
 import { ContactoComponent } from './contacto/contacto.component';
 import { HomeComponent } from './home/home.component';
 import { InputNumeroComponent } from './input-numero/input-numero.component';
+import { FormularioCarritoComponent } from './formulario-carrito/formulario-carrito.component';
 
 @NgModule({
   declarations: [
@@ -18,12 +20,14 @@ import { InputNumeroComponent } from './input-numero/input-numero.component';
     CarritoComprasComponent,
     ContactoComponent,
     HomeComponent,
-    InputNumeroComponent
+    InputNumeroComponent,
+    FormularioCarritoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

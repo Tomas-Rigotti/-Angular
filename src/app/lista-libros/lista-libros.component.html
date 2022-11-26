@@ -12,7 +12,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let libro of libros" [ngClass]="{'oferta': libro.oferta}">
-            <td><img [src]="libro.imagen" [alt]="libro.titulo"></td>
+            <td><img width="150px" height="250px" [src]="libro.imagen" [alt]="libro.titulo"></td>
             <td>{{libro.titulo}}</td>
             <td>{{libro.genero}}</td>
             <td>{{libro.cantidad_pag}}</td>
@@ -20,6 +20,7 @@
             <td><span *ngIf="libro.stock == 0" class="badge text-bg-danger">SIN STOCK</span></td>
             <td>
                 <app-input-numero [(cantidad)]="libro.cantidad" [max]="libro.stock" (maxAlcanzado)="maxAlcanzado($event)"></app-input-numero>
+                <button class="btn" (click)="agregarCarrito(libro)">Comprar</button>
             </td>
         </tr>
     </tbody>
